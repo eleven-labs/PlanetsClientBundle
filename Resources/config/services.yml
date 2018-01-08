@@ -1,0 +1,17 @@
+parameters:
+  apiclient.config:
+    base_uri: "https://planets-bo.eleven-labs.com"
+
+services:
+  guzzle:
+    class: GuzzleHttp\Client
+    arguments: [%apiclient.config%]
+
+  eleven_labs_planets_client.api_client:
+    class: ElevenLabs\PlanetsClientBundle\Services\ApiClientService
+    arguments:
+      - "@guzzle"
+      - %eleven_labs_planets_client.email%
+      - %eleven_labs_planets_client.password%
+      - %eleven_labs_planets_client.client_id%
+      - %eleven_labs_planets_client.client_secret%
