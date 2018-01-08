@@ -46,7 +46,7 @@ class ApiClientService
     {
         $token = $this->getToken();
 
-        $res = $this->guzzle->get('/api/astronauts?_format=json&offset=0',
+        $res = $this->guzzle->get($url,
         [
             'headers' => [
                 'Authorization' => $token,
