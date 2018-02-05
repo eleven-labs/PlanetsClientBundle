@@ -31,8 +31,8 @@ class ApiClientService
 
         $res = $this->guzzle->request('post', '/oauth/v2/token',
             [
-                'headers' => ['Content-type' => 'application/json'],
-                'json' => $oauth,
+                'headers' => ['Content-type' => 'application/x-www-form-urlencoded'],
+                'form_params' => $oauth,
             ]
         );
 
